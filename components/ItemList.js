@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, FlatList, TouchableHighlight, TouchableOpacity } from 'react-native'
+import { MaterialIcons } from '@expo/vector-icons'
 
 const ItemList = ({ todos, delHandler }) => {
     return (
         <FlatList
-            // keyExtractor={(item) => item.key}
             data={todos}
             renderItem={({ item: { todo, key } }) => (
                 <View style={styles.todo}>
@@ -14,10 +14,8 @@ const ItemList = ({ todos, delHandler }) => {
                     </Text>
 
                     <View>
-                        <TouchableOpacity onPress={() => {
-                            delHandler(key)
-                        }}>
-                            <Text style={styles.delete}>x</Text>
+                        <TouchableOpacity onPress={() => { delHandler(key) }}>
+                            <MaterialIcons style={styles.delete} name='delete' />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -46,10 +44,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'tomato',
         color: 'white',
         fontSize: 21,
-        padding: 20,
-        // includeFontPadding: 10,
-
-        paddingHorizontal: 30,
+        padding: 24,
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10,
     }

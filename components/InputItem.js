@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native'
+import { StyleSheet, View, TextInput, Button } from 'react-native'
 
 const InputItem = ({ addHandler }) => {
     const [newTodo, setNewTodo] = useState('')
-    // const addTodoHandler = () => {
-    //     console.log(newTodo)
-    // }
+
 
     return (
         <View>
@@ -25,7 +23,6 @@ const styles = StyleSheet.create({
     input: {
         position: 'absolute',
         padding: 20,
-        // marginHorizontal: '5%',
         marginVertical: 50,
         backgroundColor: '#fff',
         bottom: 0,
